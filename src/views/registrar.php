@@ -49,7 +49,7 @@
 
         <main>
             
-            <form id="create-class" method="POST" action="/save-classes">
+            <form id="create-class" method="POST" action="../../public/php/confirmar_registro.php">
 
 <!--                 Dados pessoais
  -->            <fieldset >
@@ -64,20 +64,20 @@
                     <!-- Foto -->
                     <div class="input-block">
                         <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
-                        <input type="url" name="avatar" id="avatar" required>
+                        <input type="url" name="avatar" id="avatar">
                     </div>
 
 
                         <!-- email -->
                         <div class="input-block">
                         <label for="email">Email</label>
-                        <input type="url" name="email" id="email" required>
+                        <input type="email" name="email" id="email" required>
                     </div>
 
                     <!-- senha -->
                     <div class="input-block">
                         <label for="senha">Senha</label>
-                        <input type="url" name="senha" id="senha" required>
+                        <input type="password" name="senha" id="senha" required>
                     </div>
 
 

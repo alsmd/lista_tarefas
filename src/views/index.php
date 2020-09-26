@@ -55,6 +55,16 @@
                 <div class="form-group">
                   <input type="password" class="form-control" placeholder="Senha" name="senha"> 
                 </div>
+                <?php if(isset($_GET['acesso']) && $_GET['acesso'] == 'sim'){ ?>
+                <div class="text-success">
+                  Conta cadastrada
+                </div>
+                <?php }?>
+                <?php if(isset($_GET['acesso']) && $_GET['acesso'] == 'nao'){ ?>
+                <div class="text-danger">
+                  Cadastre com email valido
+                </div>
+                <?php }?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>
