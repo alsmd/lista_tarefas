@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#8257E5">
-    <title>Lista de Tarefas</title>
+    <title>Lista de Tarefas-Concluidas</title>
     <!--ICONE-->
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
@@ -32,9 +32,9 @@
 
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="home.php">
         <img src="../../public/images/logo.png" width="40px" height="40px" alt="Aviso importante">
-           Lista de Tarefas-Concluidas
+           Lista de Tarefas
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -42,14 +42,17 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="cadastro.php">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="consultar.php">Consultar</a>
+            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Cadastro</a>
+              <a class="nav-link" href="concluidas.php">Concluidas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consulta.html">Consulta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="consumo.html">Concluidas</a>
+              <a class="nav-link" href="../../public/php/sair.php">Sair</a>
             </li>
           </ul>
           

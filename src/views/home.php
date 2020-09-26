@@ -43,7 +43,7 @@
 
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="home.php">
         <img src="../../public/images/logo.png" width="40px" height="40px" alt="Aviso importante">
            Lista de Tarefas
         </a>
@@ -53,14 +53,17 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Cadastro</a>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastro.php">Cadastro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consulta.html">Consulta</a>
+              <a class="nav-link" href="consultar.php">Consultar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consumo.html">Concluidas</a>
+              <a class="nav-link" href="concluidas.php">Concluidas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../public/php/sair.php">Sair</a>
             </li>
           </ul>
           
