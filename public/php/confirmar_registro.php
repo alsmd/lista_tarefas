@@ -12,8 +12,8 @@
         return $id;
     }
     //tratar conta
-    foreach($_POST as $dado){
-        str_replace("#","-",$dado);
+    foreach($_POST as $i => $dado){
+        $_POST[$i] = str_replace("#","-",$dado);
     }
     //validando cadastro
     $contas = fopen('../../src/database/contas.hd','a+');
