@@ -48,7 +48,7 @@
               Login
             </div>
             <div class="card-body">
-              <form action="" method="post">
+              <form action="../../public/php/confirmar_login.php" method="post">
                 <div class="form-group">
                   <input type="email" class="form-control" placeholder="E-mail" name="email">
                 </div>
@@ -63,6 +63,11 @@
                 <?php if(isset($_GET['acesso']) && $_GET['acesso'] == 'nao'){ ?>
                 <div class="text-danger">
                   Cadastre com email valido
+                </div>
+                <?php }?>
+                <?php if(isset($_GET['login']) && $_GET['login'] == 'nao'){ ?>
+                <div class="text-danger">
+                  Email e/ou senha incorreta(s)
                 </div>
                 <?php }?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
