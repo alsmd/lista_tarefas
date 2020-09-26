@@ -1,20 +1,17 @@
 <?php 
-
     $contas = fopen('../../src/database/contas.hd','a+');
     $acesso = false;
     $id = null;
-    print_r($_POST);
     while(!(feof($contas))){
         $conta_armazenada = fgets($contas);
         if($conta_armazenada !=''){
-            $conta_armazenada = explode('#',$conta_armazenada);
-            if($conta_armazenada[2] == $_POST['email'] && $conta_armazenada[3] == $_POST['senha']){
+            $conta_armazenada = json_decode($conta_armazenada);
+            if($conta_armazenada->email == $_POST['email'] && $conta_armazenada->senha == $_POST['senha']){
                 $acesso = true;
-                $id = $conta_armazenada[4];
+                $id = $conta_armazenada->id;
             }
         }
     }
-    echo $id;
     if($acesso){
         session_start();
         $_SESSION['id'] = $id;
