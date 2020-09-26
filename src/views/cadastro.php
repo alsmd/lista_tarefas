@@ -1,3 +1,10 @@
+<?php 
+  session_start();
+  if(!(isset($_SESSION['id']))){
+    header("Location: index.php");
+  } 
+
+?>
 <html>
 	<head>
     <meta charset="utf-8" />
@@ -75,7 +82,7 @@
               <div class="row">
                 <div class="col">
                   
-                  <form method="post" action="../scripts/registra_chamado.php">
+                  <form method="post" action="../../public/php/registrar_tarefa.php">
                     <div class="form-group">
                       <label>Título</label>
                       <input type="text" class="form-control" placeholder="Título" name="titulo">
