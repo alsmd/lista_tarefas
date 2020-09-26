@@ -70,13 +70,22 @@
     </nav>
 
 
+
     <div class="container">    
+
       <div class="row">
 
         <div class="card-abrir-chamado">
           <div class="card">
             <div class="card-header">
               Registrar nova tarefa
+                        <?php 
+                        if(isset($_GET['cadastro']) && $_GET['cadastro'] == 'sim'){
+                        ?>
+                        <div class="text-success" style="float:right;">
+                        Cadastrado com Sucesso
+                        </div>
+                        <?php }?>
             </div>
             <div class="card-body">
               <div class="row">
@@ -85,7 +94,7 @@
                   <form method="post" action="../../public/php/registrar_tarefa.php">
                     <div class="form-group">
                       <label>Título</label>
-                      <input type="text" class="form-control" placeholder="Título" name="titulo">
+                      <input type="text" class="form-control" placeholder="Título" name="titulo" required>
                     </div>
                     
                     <div class="form-group">
@@ -111,7 +120,9 @@
                       </div>
 
                       <div class="col-6">
+
                         <button class="btn btn-lg btn-success btn-block" type="submit">Salvar</button>
+
                       </div>
                     </div>
                   </form>

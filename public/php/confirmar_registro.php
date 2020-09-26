@@ -13,7 +13,7 @@
 
     //tratar conta
     $usuario = new Usuario();
-    $usuario->setAttr($_POST['name'],$_POST['avatar'],$_POST['email'],$_POST['senha'],$id());
+    $usuario->setAttr($_POST['name'],$_POST['avatar'],$_POST['email'],$_POST['senha'],$id);
     $usuario_json = json_encode($usuario).PHP_EOL;
 
     //validando cadastro

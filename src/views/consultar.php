@@ -4,6 +4,20 @@
     header("Location: index.php");
   } 
 
+    $id =$_SESSION['id'];
+    $id = trim($id);
+    $tarefas_src = fopen("../../src/database/dados/$id.hd",'r');
+    $tarefas = [];
+    while(!(feof($tarefas_src))){
+      $tarefa_json = fgets($tarefas_src);
+      if($tarefa_json != ''){
+        $tarefa = json_decode($tarefa_json);
+        $tarefas[] = $tarefa;
+      }
+     
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +45,18 @@
     <link rel="stylesheet" href="../../public/css/partials/page-study.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     
+    <style>
+    .teacher-item header div {
+      width:100%;
+      text-align:center;
+
+    }
+    .teacher-item header div strong{
+      display:inline;
+
+    }
     
+    </style>
 </head>
 <body id="page-study">
     
@@ -42,6 +67,7 @@
         <img src="../../public/images/logo.png" width="40px" height="40px" alt="Aviso importante">
            Lista de Tarefas
         </a>
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -93,7 +119,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="bg-info">Filtrar</button>
+                    <button type="submit" class="bg-success">Filtrar</button>
     
                 </form>
             </div>
@@ -103,31 +129,34 @@
 
         <main>
 
-            <article class="teacher-item">
-                <header>
-                    <img 
-                        src= "" alt="">
-                    <div>
-                        <strong>Nome da Tarefa</strong>
 
-                    </div>
-                </header>
+<?php 
+  foreach($tarefas as $indice => $valor){
+?>
+    <article class="teacher-item">
+        <header class="bg-dark rounded mb-4 text-light">
             
-                <p>descrição</p>
-                <p></p>
-                <footer>
-                    <p>Vencimento<strong>Dia</strong>
-                    </p>
+            <div>
+                <strong><?=$valor->titulo?></strong>
 
-                    <a href="">
+            </div>
+        </header>
 
-                       Concluir tarefa
-                    </a>
+        <p><?=$valor->descricao?></p>
+
+        <footer>
+            <p>Tipo:<strong><?=$valor->tipo?></strong>
+            </p>
+
+            <a href="">
+
+                Concluir
+            </a>
 
 
-                </footer>
-            </article>
-
+        </footer>
+    </article>
+  <?php }?>
 
 
            

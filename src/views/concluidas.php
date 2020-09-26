@@ -2,7 +2,22 @@
   session_start();
   if(!(isset($_SESSION['id']))){
     header("Location: index.php");
-  } 
+  }
+
+    $id =$_SESSION['id'];
+    $id = trim($id);
+    $tarefas_src = fopen("../../src/database/dados/$id.hd",'r');
+    $tarefas = [];
+    while(!(feof($tarefas_src))){
+      $tarefa_json = fgets($tarefas_src);
+      if($tarefa_json != ''){
+        $tarefa = json_decode($tarefa_json);
+        $tarefas[] = $tarefa;
+      }
+     
+    }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -104,30 +119,33 @@
 
         <main>
 
-            <article class="teacher-item">
-                <header>
-                    <img 
-                        src= "" alt="">
-                    <div>
-                        <strong>Nome da Tarefa</strong>
-
-                    </div>
-                </header>
+        <?php 
+  foreach($tarefas as $indice => $valor){
+?>
+    <article class="teacher-item">
+        <header class="bg-dark rounded mb-4 text-light">
             
-                <p>descrição</p>
-                <p></p>
-                <footer>
-                    <p>Concluido<strong>Dia</strong>
-                    </p>
+            <div>
+                <strong><?=$valor->titulo?></strong>
 
-                    <a href="" class="bg-danger">
+            </div>
+        </header>
 
-                       Remover
-                    </a>
+        <p><?=$valor->descricao?></p>
+
+        <footer>
+            <p>Tipo:<strong><?=$valor->tipo?></strong>
+            </p>
+
+            <a href="">
+
+                Concluir
+            </a>
 
 
-                </footer>
-            </article>
+        </footer>
+    </article>
+  <?php }?>
 
 
 

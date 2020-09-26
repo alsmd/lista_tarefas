@@ -10,7 +10,11 @@
     $id =$_SESSION['id'];
     $id = trim($id);
     $tarefas = fopen("../../src/database/dados/$id.hd",'a');
-    fwrite($tarefas,$tarefa_json);
+    $acesso = fwrite($tarefas,$tarefa_json);
     fclose($tarefas);
+
+    if($acesso){
+        header("Location: ../../src/views/cadastro.php?cadastro=sim");
+    }
 
 ?>
