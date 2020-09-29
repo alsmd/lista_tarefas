@@ -6,7 +6,7 @@
 
     $id =$_SESSION['id'];
     $id = trim($id);
-    $tarefas_src = fopen("../../src/database/dados/$id.hd",'r');
+    $tarefas_src = fopen("../../src/database/dados/$id.hd",'a+');
     $tarefas = [];
     while(!(feof($tarefas_src))){
       $tarefa_json = fgets($tarefas_src);
@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
     <!-- Normalize CSS -->
-    <link rel="stylesheet" href="Css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
 	<!-- Bootstrap início -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -46,7 +46,19 @@
     <link rel="stylesheet" href="../../public/css/partials/page-study.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     
+    <style>
+    .teacher-item header div {
+      width:100%;
+      text-align:center;
+
+    }
+    .teacher-item header div strong{
+      display:inline;
+
+    }
     
+    }
+    </style>
 </head>
 <body id="page-study">
     

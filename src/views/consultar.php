@@ -6,7 +6,7 @@
 
     $id =$_SESSION['id'];
     $id = trim($id);
-    $tarefas_src = fopen("../../src/database/dados/$id.hd",'r');
+    $tarefas_src = fopen("../../src/database/dados/$id.hd",'a+');
     $tarefas = [];
     while(!(feof($tarefas_src))){
       $tarefa_json = fgets($tarefas_src);
@@ -56,6 +56,7 @@
 
     }
     
+    }
     </style>
 </head>
 <body id="page-study">
